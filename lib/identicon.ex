@@ -14,6 +14,15 @@ defmodule Identicon do
         |> pick_color
         |> build_grid
         |> filter_odd_squares
+    end 
+
+    def create_person() do 
+        %Identicon.Person{names: {"Victor Hugo", "Rodriguez Ramos"}, birthdate: "23/06/88"} 
+        |> say_hi
+    end 
+
+    def say_hi(%Identicon.Person{names: {fname, lname}} = _person) do 
+        fname <> " " <> lname
     end
 
     def hash_input(input) do
